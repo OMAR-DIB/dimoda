@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-ivory text-ink font-sans font-light antialiased;
+  }
+  ::selection {
+    @apply bg-gold-200 text-ink;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display font-medium tracking-tight;
+  }
+  img {
+    @apply max-w-full;
+  }
+  input, select, textarea {
+    @apply font-sans;
+  }
+  * {
+    @apply border-ivory-300;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-10;
+  }
+  .eyebrow {
+    @apply text-[11px] font-medium uppercase tracking-luxe text-gold-600;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-none px-7 py-3.5 text-[12px] font-medium uppercase tracking-wide2 transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-ink text-ivory hover:bg-gold-500 hover:text-ink;
+  }
+  .btn-gold {
+    @apply btn bg-gold-500 text-ink hover:bg-ink hover:text-ivory shadow-gold;
+  }
+  .btn-outline {
+    @apply btn border border-ink bg-transparent text-ink hover:bg-ink hover:text-ivory;
+  }
+  .btn-ghost {
+    @apply btn border border-transparent bg-transparent text-ink hover:border-ink;
+  }
+  .btn-whatsapp {
+    @apply btn bg-[#25D366] text-white hover:bg-[#1EBE5A];
+  }
+  .field {
+    @apply w-full border border-ivory-300 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-gold-500 focus:ring-2 focus:ring-gold-100 placeholder:text-stone-light;
+  }
+  .label {
+    @apply mb-1.5 block text-[11px] font-medium uppercase tracking-wide2 text-stone;
+  }
+  .hairline {
+    @apply h-px w-full bg-ivory-300;
+  }
+  .link-underline {
+    @apply relative after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100;
+  }
+  .skeleton {
+    @apply animate-shimmer bg-[linear-gradient(90deg,#EFEDE7_0%,#F6F5F1_40%,#EFEDE7_80%)] bg-[length:1200px_100%];
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Thin elegant scrollbar for drawers */
+.drawer-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.drawer-scroll::-webkit-scrollbar-thumb {
+  background: #e4e1d8;
+  border-radius: 999px;
+}
